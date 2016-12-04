@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>Utiliser l'OpenData dans la recherche d'offre: Jour 1</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="./css/reveal.css">
+    <link rel="stylesheet" href="./css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="./lib/css/zenburn.css">
+
+    <!-- Components Specific To This App -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700" rel="stylesheet">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <link rel="stylesheet" type="text/css" href="./css/print/paper.css">
+   <style>
+   .personnas div{
+            width: 100%      
+   }
+   .personnas div>img{
+            width: 20%      
+   }
+   .personnas div>div{
+       width: 80%  
+   }
+   </style>
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body style="transition: -webkit-transform 0.8s ease;">
+
+    <div class="reveal slide " role="application" data-transition-speed="default" data-background-transition="fade">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>L'OpenData dans la recherche d'offre</h1>
+                <h3>Jour 1: Comprendre</h3>
+                <img alt="Sprint diagramme" style="background:#fff"  width="50%" src="./img/opendata.jpg"/>
+            </section>
+            <section>
+              <section>
+                <h2>Présentation</h2>
+            </section>
+            <section>
+                <h3>L'OpenData</h3>
+                <blockquote>
+                    L'open data ou donnée ouverte est une donnée numérique dont l'accès et l'usage sont laissés libres aux usagers. Elle peut être d'origine publique ou privée, produite notamment par une collectivité, un service public ou une entreprise. Elle est diffusée de manière structurée selon une méthode et une licence ouverte garantissant son libre accès et sa réutilisation par tous, sans restriction technique, juridique ou financière.
+                </blockquote>
+            </section>
+            <section>
+                <h4>Les données</h4>
+                <h3>Quelques exemples:<h3>
+            </section>
+            <section>
+                <h3>LA BASE ADRESSE NATIONALE</h3><h4>Un référentiel national ouvert : de l'adresse à la coordonnée géographique</h4>
+                 <p>Les données: l'ensemble des adresses du territoire francais (numéro de rue, nom de rue, code insee, code postal, bureau distributeur, commune, coodonnées(x,y) dans le référentiel OpenStreetmap)
+            </section>
+            <section>
+                <h3>Référentiels INSEE</h3><h4>Le référentiel des régions,départements, communes,infracommunales <a href="https://www.geoportail.gouv.fr/donnees/iris" target="_blank">IRIS</a> </h4>
+                 <p>Les données: code insee,limites...
+            </section>
+           <section>
+                <h3>RATP</h3><h4>Offre transport de la RATP - format GTFS</h4>
+                 <p>Les données: horaires prévisionnels (RER, métro, bus, tram), localisation de tous les arrêts, ensemble des correspondances possibles </p>
+            </section>
+             <section>
+                <h3>SNCF</h3><h4>Référentiel des gares de voyageurs</h4>
+                 <p>Les données: l'ensemble des gares francaises (code insee, code postal, coodoonées gps) </p>
+                 <h4>Horaires des lignes Transilien,intercites,TER,Tram-Train Pays de Loire - format GTFS</h4>
+                 <p>Les données: horaires prévisionnels , localisation de tous les arrêts, ensemble des correspondances possibles </p>
+            </section>
+             <section>
+                <h3>Les régie de transport en région</h3><h4>Offre de transport - format GTFS, CSV en fonction de la régie</h4>
+                <p>33,91,93,94,Acheres,Agde,Agglo Aubagne,Aix-en-Provence,Ambérieu-en-Bugey,Angers,Annemasse,Annonay,Antibes,Arcachon...</p>
+                 <p>Les données: horaires prévisionnels (bus, tram), localisation de tous les arrêts</p>
+             </section>
+            </section>
+            <section>
+                 <h2>Agenda</h2>
+            </section>
+            <section>
+                <h2>Objectifs du Sprint</h2>
+            </section>
+            <section>
+                <section>
+                <h2>Vision</h2>
+                 </section>
+                <section>
+                    <div class="stretch">
+               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/k0RU-a5GeMM" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </section>
+            </section>
+             <section>
+                <section>
+                <h2>Analyse des données existantes</h2>
+                 </section>
+                <section>
+                				<canvas class="stretch" data-chart="bar">
+<!--
+{
+ "data": {
+  "labels": ["moins de 25 ans","25 à 49 ans"," 50 ans et plus"],
+  "datasets":[
+   {
+    "data":[409000,1678600,627200],
+    "label":"Hommes","backgroundColor":"#3F51B5"
+   },
+   {
+    "data":[396100,1731900,682700],
+    "label":"Femmes","backgroundColor":"#E91E63"
+   }
+  ]
+ }, 
+ "options": { "responsive": "true",
+            "title": {
+                "display":"true",
+                "text":"Demandeurs d'emploi'"
+            } }
+}
+-->
+				</canvas>
+                 </section>
+                                 <section>
+                				<canvas class="stretch" data-chart="horizontalBar">
+<!--
+{
+ "data": {
+  "labels": ["emploi loin du domicile donc frais pour entretien ou déménagement trop importants",
+  "victime de discirmination à l'embauche en raison du sexe, age, lieu de résidence ou handicap",
+  "entre salaire et frais, entraine une perte d'argent dans le cas d'une reprise d'emploi",
+  "contraintes incompatibles avec les horaires spécifiques de certains emplois",
+  "difficultés financères pour faire garder mes enfants dans le cas d'une reprise d'emploi",
+  "difficultés à trouver un emploi car absence de moyen de transport personnel",
+  "difficultés à trouver un emploi car domicile mal desservi par les transports en commun"],
+  "datasets":[
+   {
+    "data":[39,28,27,19,15,13,11],
+    "label":"% ST Oui, c'est une situation dans laquelle je me reconnais'","backgroundColor":"#3F51B5"
+   }
+  ]
+ }, 
+ "options": { "responsive": "true",
+            "title": {
+                "display":"true",
+                "text":"Situation personnelle: les freins à l'emploi "
+            } }
+}
+-->
+				</canvas>
+                 </section>
+                                 <section>
+                				<canvas class="stretch" data-chart="horizontalBar">
+<!--
+{
+ "data": {
+  "labels": ["Avoir la possibilité de contacter par mail votre conseiller quand vous le souhaitez",
+  "Pouvoir déposer votre CV sur pole-emploi.fr au format souhaité (word,pdf..)",
+  "Pouvoir rechercher des offres d'emploi sur pole-emploi.fr en fonction de temps de trajet'",
+  "Participer à des forums de recrutement organisés avec des entreprises de votre département",
+  "Possibilité de préparer individuellement un entretien avec votre conseiller",
+  "Disposer depuis votre portable de différents services (actualisation, consultation d'offres)",
+  "Pouvoir rester en contact avec votre conseiller pendant les premières semaines de retour à l'emploi"],
+  "datasets":[
+   {
+    "data":[91,85,79,74,68,62,62],
+    "label":"% ST Utile, pensez-vous que ce service pourrait vous être utile ?","backgroundColor":"#3F51B5"
+   }
+  ]
+ }, 
+ "options": { "responsive": "true",
+            "title": {
+                "display":"true",
+                "text":"Pistes de nouveaux services qui favorisent fléxibilité, personnalisation et rencontre avec les entreprises repondent parfaitement aux attentes"
+            } }
+}
+-->
+				</canvas>
+                 </section>
+                                                  <section>
+                				<canvas class="stretch" data-chart="horizontalBar">
+<!--
+{
+ "data": {
+  "labels": ["Le descriptif du poste, de la mission",
+  "Le lieu géographique du poste",
+  "L'intitulé de poste'",
+  "Les compétences demandées",
+  "Le type de contrat",
+  "Le salaire",
+  "L'expérience requise",
+  "Les diplômes exigés",
+  "Les nom de l'entreprise",
+  "Les avantages proposés"],
+  "datasets":[
+   {
+    "data":[79,78,67.4,58.3,57.6,45.5,44.3,29.7,22.7,12],
+    "label":"% ST oui, quels sont les éléments auxquels vous prêtez le plus d’attention dans une offre d’emploi ?","backgroundColor":"#3F51B5"
+   }
+  ]
+ }, 
+ "options": { "responsive": "true",
+            "title": {
+                "display":"true",
+                "text":"Eléments importants dans une offre"
+            } }
+}
+-->
+				</canvas>
+                 </section>
+                <section>
+                     <div class="stretch">
+               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/U7fH0vQmL-4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </section>
+            </section>
+             <section>
+                <section>
+                <h2>Benchmarking de la concurrence</h2>
+                 </section>
+                                                  <section>
+                				<canvas class="stretch" data-chart="horizontalBar">
+<!--
+{
+ "data": {
+  "labels": [ "Pôle emploi",
+  "Indeed",
+  "Leboncoin.fr Emploi",
+  "APEC",
+  "Meteojob",
+  "Cadremploi",
+  "Keljob",
+  "Monter",
+  "Jobrapido",
+  "Qapa",
+  "JobiJoba",
+  "Vivastreet Emploi",
+  "Beep Job",
+  "Jobinstree",
+  "Emploi-territorial.fr"],
+  "datasets":[
+   {
+    "data":[5265000,1601000,1454000,1022000,985000,893000,680000,559000,499000,427000,394000,361000,340000,305000,286000],
+    "label":"Nombre de visiteurs uniques","backgroundColor":"#3F51B5"
+   }
+  ]
+ }, 
+ "options": { "responsive": "true",
+            "title": {
+                "display":"true",
+                "text":"Audiences des sites d'emplois (Dec. 2014)"
+            } }
+}
+-->
+				</canvas>
+                 </section>
+                <section>
+                     <div class="stretch">
+               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SMlYUTLmfAk" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <h2>Définition du problème </h2>
+            </section>
+             <section>
+                <section>
+                <h2>Personas</h2>
+                 </section>
+                <section>
+                   <div class="personnas">
+                       <img src="./img/personna_1.png"></img>
+                       <div>
+                         <div>
+                             Nom  </div>
+                             <div>Homme 55 ans + 
+                         </div>
+                         <div>Autonome (28%)</div>
+                         <div>Diplôme supérieur</div>
+                         <div>Cadre dirigeant/ Ingénieur/ Cadre</div>
+                         <div>Indemnisé</div>
+                         <div>Ancienneté: Moins de 4 mois à 12 mois</div>
+                         <div>Utilisation services de PE: rarement</div>
+                       </div>
+                   </div>
+                </section>
+                                <section>
+                   <div class="personnas">
+                       <img src="./img/personna_2.png"></img>
+                       <div>
+                         <div>
+                             Nom  </div>
+                             <div>Homme ou Femme 45 ans + 
+                         </div>
+                         <div>Mal informé (20%)</div>
+                         <div>Diplôme supérieur</div>
+                         <div>Cadre dirigeant/ Ingénieur/ Cadre</div>
+                         <div>Indemnisé</div>
+                         <div>Ancienneté: Moins de 4 mois</div>
+                         <div>Utilisation services de PE: de temps en temps</div>
+                       </div>
+                   </div>
+                </section>
+                               <section>
+                   <div class="personnas">
+                       <img src="./img/personna_3.png"></img>
+                       <div>
+                         <div>
+                             Nom  </div>
+                             <div>Femme 25 à 44 ans / Enfants à charge
+                         </div>
+                         <div>Contrainte (20%)</div>
+                         <div>CAP/ BEP/ Bas Brevet Pro</div>
+                         <div>Technicien / employé</div>
+                         <div>Indemnisé</div>
+                         <div>Ancienneté: 12 à 24 mois</div>
+                         <div>Utilisation services de PE: très souvent</div>
+                       </div>
+                   </div>
+                </section>
+               
+                <section>
+                   <div class="personnas">
+                       <img src="./img/personna_4.png"></img>
+                       <div>
+                         <div>
+                             Nom  </div>
+                             <div>Homme ou Femme moins de 25 ans / Célibataire
+                         </div>
+                         <div>Insuffisament Formé(19%)</div>
+                         <div>CAP/ BEP/ Brevet collège</div>
+                         <div>Ouvrier, Opérateur / Technicien , employé</div>
+                         <div>non indemnisé</div>
+                         <div>Ancienneté: *</div>
+                         <div>Utilisation services de PE: très souvent</div>
+                       </div>
+                   </div>
+                </section>
+                 <section>
+                   <div class="personnas">
+                       <img src="./img/personna_5.png"></img>
+                       <div>
+                         <div>
+                             Nom  </div>
+                             <div>Homme ou Femme
+                         </div>
+                         <div>Hyper fragilisé (13%)</div>
+                         <div>Pas de diplôme/CAP, BEP</div>
+                         <div>Ouvrier / Opérateur</div>
+                         <div>non indemnisé</div>
+                         <div>Ancienneté: Chômage longue durée + de 24 mois</div>
+                         <div>Utilisation services de PE: souvent</div>
+                       </div>
+                   </div>
+                </section>               
+            </section>
+              <section>
+                <section>
+                <h2>Parcours utilisateurs</h2>
+                 </section>
+                <section>
+                  <div class="stretch">
+               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8r3LiH5tgn0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </section>
+            </section>           
+
+
+            
+                              <section>
+                    <h3>Mes sources et ressources</h3>
+                    <h4><i>http://www.pole-emploi.org/</i></h4>
+                    <h4><i>http://fr.slideshare.net/_bercy_/pole-emploi-enquete?qid=7f6f2521-9d33-49fb-b5e1-b2cb01bdfa21&v=&b=&from_search=51/</i></h4>
+                    <h4><i>https://www.data.gouv.fr/</i></h4>
+                </section>
+        </div>
+
+
+
+
+
+
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+          
+            // Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				mouseWheel: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+               	chart: {
+					defaults: { 
+						global: { 
+							title: { fontColor: "#FFF" }, 
+							legend: {
+								position: "bottom",
+								labels: { fontColor: "#FFF" },
+							},
+							tooltips: {
+								labels: { fontColor: "#FFF" },
+							},
+						}, 
+						scale: { 
+							scaleLabel: { fontColor: "#FFF" }, 
+							gridLines: { color: "#FFF", zeroLineColor: "#FFF" }, 
+							ticks: { fontColor: "#FFF" }, 
+						} 
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+				},
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/chart/Chart.min.js' },                  			
+					{ src: 'plugin/chart/csv2chart.js' },	
+				]
+			});
+        </script>
+        <script type="text/javascript" src="./plugin/zoom-js/zoom.js"></script>
+        <script type="text/javascript" src="./plugin/notes/notes.js"></script>
+
+
+
+
+</body>
+
+</html>
