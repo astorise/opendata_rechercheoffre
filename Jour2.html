@@ -119,7 +119,18 @@
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					
+					{src: "plugin/speech/speech.js",
+    callback: function() {
+      RevealSpeech.configure({
+        nextKeyword: 'suivant',     // default gotonext
+        prevKeyword: 'precedent', // default gotoprevious
+        lastKeyword: 'derniere',     // default gotolast
+        firstKeyword: 'premiere',   // default gotofirst
+        debug: true                   // default false
+      });
+        
+                 }
+                    },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/chart/Chart.min.js' },                  			
 					{ src: 'plugin/chart/csv2chart.js' },	
