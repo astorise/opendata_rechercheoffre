@@ -1,0 +1,16 @@
+main  {
+display: table;
+height: 100vh;
+width:100%;
+}
+#landing {
+    color:gray;
+    display: table-cell;
+    vertical-align: middle;
+
+& p {
+    text-align: center;
+}
+}
+
+@import "wave";
