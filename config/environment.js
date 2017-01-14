@@ -4,8 +4,10 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'opendata-rechercheoffre',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
     rootURL: '/',
     locationType: 'auto',
+    firebase: "https://rechercheoffre-40db8.firebaseio.com",
     firebase:{
     apiKey: "AIzaSyDEOLV8M4nOr-njSNsPv9L7SITso8RbA4A",
     authDomain: "rechercheoffre-40db8.firebaseapp.com",
@@ -13,6 +15,10 @@ module.exports = function(environment) {
     storageBucket: "rechercheoffre-40db8.appspot.com",
     messagingSenderId: "464127195892"
     },
+    torii: {
+    sessionServiceName: 'session',
+      remoteServiceName: 'iframe',
+  },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
