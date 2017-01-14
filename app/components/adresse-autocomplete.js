@@ -2,7 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     store: Ember.inject.service(),
+   adresse: null,
   filter: null,
+
   filteredList: Ember.computed('filter',  function() {
       if(this.get('filter')===null){
 return null;
@@ -15,20 +17,9 @@ return null;
 });
   }),
   actions: {
-    autoComplete() {
-     this.get('store').query('adresse', {
-  filter: {
-    label: (this.get('filter'))
-  }
-}).then(function(adresse) {
-  this.set('filter',adresse);
-});
-    },
-    search() {
-      this.get('search')(this.get('filter'));
-    },
-    choose(city) {
-      this.set('filter',city);
+     choose(adresse) {
+        this.set('adresse',adresse);
+    this.set('filter',this.get('adresse').get('label'));
     }
   }
 });
