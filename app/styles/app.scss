@@ -1,4 +1,28 @@
-$primary-color: gray;
+@import "mixins/color";
+@import "mixins/animation";
+@import "mixins/elevation";
+@import "mixins/typography";
+//Variables
+    //Color
+$primary-color: color("grey", "lighten-2") !default;
+$primary-color-light: lighten($primary-color, 15%) !default;
+$primary-color-dark: darken($primary-color, 15%) !default;
+
+$secondary-color: color("teal", "lighten-1") !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+$link-color: color("light-blue", "darken-1") !default;
+    //Font
+$roboto-font-path: "../fonts/roboto/" !default;
+
+
+@import "grid";
+@import "button";
+@import "textfield";
+//
+header {
+    display: none;
+}
 
 main  {
 display: table;
@@ -7,6 +31,7 @@ width:100%;
 }
 #landing {
     color:gray;
+    background-color: $primary-color;
     display: table-cell;
     vertical-align: middle;
 
