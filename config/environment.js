@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'opendata-rechercheoffre',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com  https://api-adresse.data.gouv.fr" },
     rootURL: '/',
     locationType: 'auto',
     firebase: "https://rechercheoffre-40db8.firebaseio.com",

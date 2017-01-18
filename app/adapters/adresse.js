@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.JSONAPIAdapter.extend({
-    host: 'http://api-adresse.data.gouv.fr/',
+    host: 'https://api-adresse.data.gouv.fr/',
     defaultSerializer:'adresse',
 /*    @method buildURL
     @param {String} modelName

@@ -478,3 +478,70 @@ input[type="text"] {
   align-self: flex-start;
 }
 /* stylelint-enable selector-no-type */
+
+
+.m-textfield{
+  position: relative;
+  margin: 10px 0px;
+  padding-bottom: 0px;
+	max-width: 300px;
+}
+.m-textfield input{
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  border: 0;
+  border-bottom: 1px solid #2196F3;
+ /* border-left: 1px solid #2196F3;*/
+  transition: all .4s ease;
+}
+/*css for the textbox focus border*/
+.m-textfield:after{
+	width: 0%;
+	height: 2px;
+	background-color: #2196F3;
+	display: block;
+	content: "";
+	transition: all .4s;
+}
+
+/*the placeholder text*/
+.m-textfield >label{
+  position: absolute;
+  /*needed for transitions*/
+  top: 0;
+  left: 0;
+  padding: 10px 10px 10px 20px;
+  transition: all .4s ease;
+  color: #2196F3;
+  opacity: .8;
+}
+.fa-required{
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  transition: color .4s;
+  font-size: 8px;
+}
+
+/*active transition and valid*/
+.m-textfield input:valid, .m-textfield input:focus{
+  outline: none;
+}
+/*active only*/
+.m-textfield input:focus{
+   border-color: #FF6D00; 
+}
+/*styling for focus only*/
+.m-textfield input:focus + label{
+  color: #FF6D00;
+}
+/*styling for focus and valid*/
+//.m-textfield input:not([value=""]):not(:focus):invalid +  label, 
+.m-textfield input:focus + label, .value input + label{
+  top: -25px;
+  padding: 10px;
+  font-size: 12px;
+
+}

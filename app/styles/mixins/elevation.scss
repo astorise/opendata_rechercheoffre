@@ -157,3 +157,12 @@ $mdc-elevation-transition-timing-function: $mdc-animation-fast-out-slow-in-timin
   will-change: $mdc-elevation-property;
 }
 
+@for $z-value from 0 through 24 {
+  .mdc-elevation--z#{$z-value} {
+    @include mdc-elevation($z-value);
+  }
+}
+
+.mdc-elevation-transition {
+  @include mdc-elevation-transition;
+}
