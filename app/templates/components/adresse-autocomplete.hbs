@@ -1,6 +1,7 @@
-{{input value=filter placeholder='adresse'  }} 
+{{# m-textfield value=filter label='Votre adresse' }}
 <ul>
 {{#each filteredList as |item|}}
   <li {{action 'choose' item}}>{{item.label}}</li>
 {{/each}}
 </ul>
+{{/ m-textfield}}

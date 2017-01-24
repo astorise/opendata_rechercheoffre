@@ -1,2 +1,26 @@
 
-assistant de recherche
+ <section id="profil" class="row">
+  <h2> Mon Profil</h2>  
+{{adresse-autocomplete adresse=user.adresse }}
+<label for="permis">Vous avec le permis</label>{{input    id="permis" type="checkbox" class="switch" checked=user.licence }}<br>
+<label for="voiture">Vous avec une voiture</label>{{input   id="voiture" type="checkbox" class="switch" checked=user.carOwner }}
+</section>
+<section id="emploi" class="row">
+ <h2>Emploi recherché</h2>
+{{m-textfield value='' label='Emploi recherché' }}
+<label>Mes Priorités</label>
+</section>
+<section id="vie"  class="row">
+ <h2>Vie Pratique</h2>
+<label for="enfant">Nombre d'enfants à charge?</label>{{input   id="enfants"  value=nbChilds type="number" min="0" }}
+{{#each childrens as |child|}}
+ {{child}}
+{{/each}}
+<br>
+<label>Vous avez un handicap moteur ?</label>{{input checked=user.handicap id="handicap" type="checkbox" class="checkbox"}}
+</section>
+<section id="compétences" class="row">
+ <h2>Mes compétences</h2>
+    {{m-textfield value='' label='Mes compétences' }}
+</section>
+ <p>{{#m-link-to "offres"}}voir ma recherche{{/m-link-to}}</p>

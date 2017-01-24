@@ -1,0 +1,55 @@
+.switch:after {
+    content: "";
+    
+    position: absolute;
+    top: -8px;;
+    right: 0;
+    
+    width: 1.1rem;
+    height: 1.1rem;
+    
+    background: $primary-color-light;
+    
+    cursor: pointer;
+
+     -webkit-border-radius: 7px;
+    border-radius: 7px;
+    position: absolute;
+    height: 10px;
+    width: 37px;
+    
+  }
+
+  .switch:before {
+    z-index:5;
+    content: "";
+    
+    position: absolute;
+    top: -13px;;
+    right: 25;
+    
+    width: 1.1rem;
+    height: 1.1rem;
+    
+    background: $primary-color;
+    
+    cursor: pointer;
+
+     -webkit-border-radius: 7px;
+    border-radius: 10px;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4)
+  }
+
+  .switch:checked:before {
+   right: 16px;
+   background: $primary-color;
+  }
+
+
+  .switch{
+      position:relative;
+      height: 0px;
+  }

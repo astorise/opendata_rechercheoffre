@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Material+Icons');
+
 @import "mixins/color";
 @import "mixins/animation";
 @import "mixins/elevation";
 @import "mixins/typography";
 //Variables
     //Color
-$primary-color: color("grey", "lighten-2") !default;
+$primary-color: color("pink", "lighten-2") !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
-$secondary-color: color("teal", "lighten-1") !default;
+$secondary-color: color("indigo", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;
@@ -19,6 +22,9 @@ $roboto-font-path: "../fonts/roboto/" !default;
 @import "grid";
 @import "button";
 @import "textfield";
+@import "wave";
+@import "switch";
+@import "checkbox";
 //
 header {
  //   display: none;
@@ -40,26 +46,41 @@ width:100%;
 }
 }
 
-div.dialog {
+#dialog {
     background-color: white;
-    position: fixed;
-    top:calc(50vh - 50px);
-    height: 100px;
+    position: absolute;
+    top:0px;
     left:0px;
-    & :before{
-        top:0px;
-        left:0px;
-        position:fixed;
-        content: ' ';
-        background-color: grey;
-        height: 100vh;
-        width: 100%;
-
-    }
-    & :empty{
-        display: none;
-    }
+    z-index:1000;
+   
 }
 
+label {
+    text-align: left;
+}
 
-@import "wave";
+ input[type='checkbox'] {
+      float: right;
+      clear: both;
+}
+
+section{
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.assistant {
+        background-color: white;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index:1000;
+    width: 100%;
+}
+
+@media #{$medium-and-up} {
+  .assistant {
+    width: 300px;
+  }
+}

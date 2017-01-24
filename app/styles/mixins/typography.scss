@@ -131,3 +131,19 @@ $mdc-typography-styles: (
     @include mdc-typography-adjust-margin($style);
   }
 }
+
+h2 {
+      font-size: .938rem; /* 15sp */
+    line-height: 1.5rem; /* 24sp */
+    font-weight: map-get($mdc-typography-font-weight-values, bold);
+    letter-spacing: .04em;
+    margin: -.313rem 0 .813rem -.06em /* -5sp 0 13sp -.06em */;
+}
+
+body {
+      font-size: .875rem; /* 14sp */
+    line-height: 1.5rem; /* 24sp */
+    font-weight: map-get($mdc-typography-font-weight-values, medium);
+    letter-spacing: .04em;
+    margin: -.25rem 0 .75rem 0 /* -4sp 0 12sp 0 */;
+}

@@ -4,9 +4,10 @@ export default Ember.Component.extend({
     store: Ember.inject.service(),
    adresse: null,
   filter: null,
+  tagName:'',
 
   filteredList: Ember.computed('filter',  function() {
-      if(this.get('filter')===null){
+      if(this.get('filter')===null || this.get('filter')===''){
 return null;
       }
       
