@@ -1,9 +1,10 @@
 
+<label for="showAssistant"> asssistant</label>  <input type="checkbox" hidden="true" id="showAssistant"> 
   {{assistant-recherche user=session.currentUser }}
 {{#search-box}}{{/search-box}}
   <p>{{#m-link-to "offres" (query-params dialog="carte")  }}Carte {{/m-link-to}}</p>
 les offres
 {{#list-offre offres=model }} {{/list-offre}}
 
-  <p>{{#m-link-to "offres" (query-params dialog="assistant-recherche")  }}Assistant {{/m-link-to}}</p>
-
+<label for="showCarte"> Carte</label>  <input type="checkbox" hidden="true" id="showCarte"> 
+  {{carte-recherche offres=model user=session.currentUser }}

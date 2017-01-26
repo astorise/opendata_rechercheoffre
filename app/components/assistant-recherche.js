@@ -39,7 +39,7 @@ export default Ember.Component.extend({
       user.save();
       _this.set('user', user);
        _this.set('nbChilds',2);
-         })
+         });
        
     }
 });

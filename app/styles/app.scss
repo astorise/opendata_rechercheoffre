@@ -84,3 +84,13 @@ section{
     width: 300px;
   }
 }
+
+
+#showAssistant + div {
+overflow: hidden;
+bottom: 100vh;
+}
+
+#showAssistant:checked + div {
+bottom: auto;
+}
