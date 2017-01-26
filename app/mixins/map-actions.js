@@ -28,6 +28,9 @@ export default Ember.Mixin.create({
   }),
 
 	actions: {
+    setOffreId: function(offre){
+    console.log(offre);
+    },
     dropPin: function(e){
       var lat = e.latlng.lat;
       var lng = e.latlng.lng;

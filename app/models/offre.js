@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -128,5 +129,11 @@ numberofapplication: DS.attr('string'),
 nbvacanciesleft: DS.attr('string'),
 latitude: DS.attr('string'),
 longitude: DS.attr('string'),
-workforce: DS.attr('string')
+workforce: DS.attr('string'),
+location: Ember.computed('latitude','longitude', function(){
+        var coordinates = [];
+      coordinates.push(this.get('latitude'));
+      coordinates.push(this.get('longitude'));
+      return coordinates;
+})
 });

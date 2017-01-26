@@ -7,6 +7,7 @@ export default Ember.Route.extend({
   },
   actions: {
     signIn: function(provider) {
+      this.get('session').close();
       this.get('session').open('firebase', { provider: provider}).then(function() {
       });
     },

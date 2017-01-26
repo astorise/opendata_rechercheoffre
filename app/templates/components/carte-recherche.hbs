@@ -25,6 +25,10 @@
 								{{#marker-layer location=pinLocation icon=icon draggable=true onDragend=(action "updatePin") onRemove=(action "removePin") riseOnHover=true riseOffset=1000}}
               {{/marker-layer}}
 						  {{/if}}
+                        {{#each offres as |offre|}}
+						  		{{#marker-layer location=offre.location  draggable=false clickable=true riseOnHover=true riseOffset=1000 onClick=(action "setOffreId" stop)}}
+						  		{{/marker-layer}}
+					  {{/each}}
           {{/leaflet-map}}
 {{yield}}
 

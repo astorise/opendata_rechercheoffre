@@ -62,7 +62,6 @@ export default Ember.Mixin.create({
 			arrayTwo.push(tempArray[2]);
 			boundsArray.push(arrayOne);
 			boundsArray.push(arrayTwo);
-			console.log(boundsArray);
 			controller.set('leafletBounds', boundsArray);
 
 		}

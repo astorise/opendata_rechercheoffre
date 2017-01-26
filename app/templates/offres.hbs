@@ -6,4 +6,4 @@ les offres
 {{#list-offre offres=model }} {{/list-offre}}
 
 <label for="showCarte"> Carte</label>  <input type="checkbox" hidden="true" id="showCarte"> 
-  {{carte-recherche offres=model user=session.currentUser }}
+  {{carte-recherche offres=model user=session.currentUser   bbox=bbox }}
